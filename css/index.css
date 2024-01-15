@@ -6,6 +6,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+button{
+  background-color: transparent;
+}
 body {
   font-family: "Gothic A1", sans-serif;
   color: #404040;
@@ -13,15 +16,19 @@ body {
 #wrapper {
   /* background-color: rgb(230, 243, 253); */
   width: 100%;
-  max-width: 1920px;
-  min-width: 1000px;
+  /* max-width: 1920px;
+  min-width: 1300px; */
   margin: 15px auto;
+}
+.container{
+  width: 90%;
+  margin: 0 auto;
 }
 /* header area */
 header {
   width: 100%;
   height: 180px;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .header_inner {
   display: flex;
@@ -38,40 +45,60 @@ header {
 }
 .icon {
   display: flex;
+  align-items: center;
   margin-top: 8px;
   gap: 70px;
   font-size: 20px;
 }
-.fa-unlock::after {
-  content: "로그인";
-  display: block;
+.log_in{
   position: absolute;
-  top: -20px;
+  top: -10px;
   left: -20px;
   width: 56px;
   height: 22px;
   text-align: center;
-  line-height: 22px;
-  background-color: #404040;
+  line-height: 24px;
   border-radius: 15px;
   color: #fff;
   font-size: 13px;
-  opacity: 0;
-  transition: all 0.3s;
+  background-color: #5A2149;
+  
 }
-li:hover .fa-unlock::after {
-  opacity: 1;
+.log_in::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -2px;
+  left: 0px;
+  width: 51px;
+  height: 18px;
+  border-radius: 15px;
+  border: 3px solid #5A2149;
+  /* transition: all 0.3s; */
+  animation: log_in_move .7s infinite;
+  transition-timing-function: ease-in-out;
+}
+@keyframes log_in_move{
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(2%);
+  }
+  /* 100% {
+    transform: translateY(0);
+  } */
 }
 .fa-globe::after {
   content: "사이트맵";
   display: block;
   position: absolute;
-  top: -20px;
+  top: -10px;
   left: 60px;
   width: 70px;
   height: 22px;
   text-align: center;
-  line-height: 22px;
+  line-height: 24px;
   background-color: #404040;
   border-radius: 15px;
   color: #fff;
@@ -82,8 +109,52 @@ li:hover .fa-unlock::after {
 li:hover .fa-globe::after {
   opacity: 1;
 }
+/* selectbox style */
+.select_lang{
+  position: relative;
+  
+}
+.pl{
+border: 0;
+/* background-color: #000; */
+padding: 12px 13px;
+font-weight: 500;
+font-size: 20px;
+appearance: none;
+text-align: left;
+}
+.list_box{
+  position: absolute;
+  top: 35px;
+  left: 0;
+  width: 160px;
+  list-style: none;
+  background: #FFFFFF;
+  border: 1px solid #C4C4C4;
+  box-sizing: border-box;
+  box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  margin-top: 9px;
+  opacity: 1;
+}
+.list{
+  border: none;
+  background-color: #FFFFFF;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  padding: 7px 10px;
+  margin: 5px 7px;
+}
+.list:focus{
+  background: #5A2149;
+  color: #fff;
+  width: 90%;
+  border-radius: 8px;
+  text-align: left;
+}
 #menu {
-  background-color: antiquewhite;
+  /* background-color: antiquewhite; */
   padding: 0 100px;
 }
 .menu {
@@ -104,4 +175,75 @@ li:hover .fa-globe::after {
   margin-top: 30px;
   display: none;
 }
-
+/* main area */
+.main_inner{
+  background-color: #5A2149;
+  margin-top: 50px;
+  width: 65%;
+}
+.from_to{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 382px;
+  color: #fff;
+  font-size: 32px;
+  padding: 40px 100px;
+}
+.from_to::after{
+  content: "";
+  display: block;
+  position: absolute;
+  top: 76px;
+  left: 271px;
+  width: 54px;
+  height: 3px;
+  background-color: #fff;
+}
+.ticketing_box ul{
+  display: flex;
+  justify-content: center;
+}
+.ticketing_box ul li{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.ticketing_box ul li > span{
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translatex(-50%);
+  font-size: 22px;
+  color: #5F6062;
+}
+.station{
+  width: 450px;
+  height: 200px;
+  background-color: #fff;
+  border: 0;
+  border-radius: 5px;
+  font-size: 24px;
+  font-weight: 700;
+  
+}
+.station:nth-child(2){
+  margin-left: 1px;
+}
+.station_box .list{
+  display: none;
+}
+.date{
+  display: flex;
+  justify-content: center;
+}
+.month{
+  width: 450px;
+  height: 80px;
+  text-align: center;
+}
+.time{
+  width: 450px;
+  height: 80px;
+  text-align: center;
+}

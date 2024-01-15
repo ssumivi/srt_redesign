@@ -8,31 +8,11 @@
     <link rel="apple-touch-icon" sizes="60x60" href="images/favicon.png" />
     <link rel="apple-touch-icon" sizes="72x72" href="images/favicon.png" />
     <link rel="apple-touch-icon" sizes="76x76" href="images/favicon.png" />
-    <link
-      rel="apple-touch-icon"
-      sizes="114x114"
-      href="images/favicon.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="120x120"
-      href="images/favicon.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="144x144"
-      href="images/favicon.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="152x152"
-      href="images/favicon.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="images/favicon.png"
-    />
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="images/favicon.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="images/favicon.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="images/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.png" />
     <link
       rel="icon"
       type="image/png"
@@ -46,9 +26,13 @@
     <meta name="msapplication-TileColor" content="#ffffff" />
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
     <meta name="theme-color" content="#ffffff" />
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/normalize.css">
+    <!-- reset css -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <!-- style css -->
+    <link rel="stylesheet" href="css/index.css" />
+    <!-- js -->
+    <script src="js/index.js"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -59,94 +43,139 @@
   </head>
   <body>
     <div id="wrapper">
-        <!-- header area -->
-        <header>
-            <div class="header_inner">
-                <div class="logo">
-                <img src="images/logo-e.png" alt="">
-                </div>
-                <div class="topmenu">
-                <ul class="icon">
-                    <li>
-                        <i class="fa-solid fa-unlock"></i>
-                        
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-globe"></i>
-                        
-                    </li>
-                    <li>
-                        <span>language</span>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </li>
+      <!-- header area -->
+      <header>
+        <div class="header_inner">
+          <div class="logo">
+            <a href="#">
+              <img src="images/logo-e.png" alt="로고" />
+            </a>
+          </div>
+          <div class="topmenu">
+            <ul class="icon">
+              <li>
+                <a href="#">
+                  <span class="log_in">로그인</span>
+                  <i class="fa-solid fa-unlock"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa-solid fa-globe"></i>
+                </a>
+              </li>
+              <li class="select_lang">
+                <button class="pl on">
+                  languages
+                  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <ul class="list_box">
+                  <li><button class="list">english</button></li>
+                  <li><button class="list">japanese</button></li>
+                  <li><button class="list">chinese</button></li>
                 </ul>
-                </div>
-            </div>
-            <nav id="menu">
-                <ul class="menu">
-                    <li class="depth_1">
-                        <a href="#">승차권</a>
-                        <ul class="depth_2">
-                            <li><a href="#">승차권예약</a></li>
-                            <li><a href="#">발권·취소</a></li>
-                            <li><a href="#">예약변경</a></li>
-                            <li><a href="#">이용내역/영수증</a></li>
-                            <li><a href="#">인터넷환불접수</a></li>
-                        </ul>
-                    </li>
-                    <li class="depth_1">
-                        <a href="#">고객안내</a>
-                        <ul class="depth_2">
-                            <li><a href="#">안내사항</a></li>
-                            <li><a href="#">자주찾는질문</a></li>
-                            <li><a href="#">고객의 소리</a></li>
-                            <li><a href="#">유실물안내</a></li>
-                            <li><a href="#">SR 고객센터</a></li>
-                            <li><a href="#">기업성장응답센터</a></li>
-                            <li><a href="#">SR 상생어벤저스</a></li>
-                        </ul>
-                    </li>
-                    <li class="depth_1">
-                        <a href="#">이용안내</a>
-                        <ul class="depth_2">
-                            <li><a href="#">종합이용안내</a></li>
-                            <li><a href="#">승차권이용안내</a></li>
-                            <li><a href="#">정차역이용안내</a></li>
-                            <li><a href="#">운행구간</a></li>
-                            <li><a href="#">부대사업안내</a></li>
-                            <li><a href="#">지연배상신청</a></li>
-                        </ul>
-                    </li>
-                    <li class="depth_1">
-                        <a href="#">회원서비스</a>
-                        <ul class="depth_2">
-                            <li><a href="#">회원제도소개</a></li>
-                            <li><a href="#">자가발권이용실적</a></li>
-                            <li><a href="#">회원가입/탈퇴</a></li>
-                            <li><a href="#">미등록고객서비스</a></li>
-                            <li><a href="#">공공할인 이용신청 </a></li>
-                        </ul>
-                    </li>
-                    <li class="depth_1">
-                        <a href="#">여행상품</a>
-                        <ul class="depth_2">
-                            <li><a href="#">SRT BEST 여행상품</a></li>
-                            <li><a href="#">지역별 여행상품</a></li>
-                            <li><a href="#">당일 여행상품</a></li>
-                            <li><a href="#">1박 2일 여행상품</a></li>
-                            <li><a href="#">2박 3일 여행상품</a></li>
-                            <li><a href="#">계절여행 특별관</a></li>
-                        </ul>
-                    </li>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <nav id="menu" class="container">
+          <ul class="menu">
+            <li class="depth_1">
+              <a href="#">승차권</a>
+              <ul class="depth_2">
+                <li><a href="#">승차권예약</a></li>
+                <li><a href="#">발권·취소</a></li>
+                <li><a href="#">예약변경</a></li>
+                <li><a href="#">이용내역/영수증</a></li>
+                <li><a href="#">인터넷환불접수</a></li>
+              </ul>
+            </li>
+            <li class="depth_1">
+              <a href="#">고객안내</a>
+              <ul class="depth_2">
+                <li><a href="#">안내사항</a></li>
+                <li><a href="#">자주찾는질문</a></li>
+                <li><a href="#">고객의 소리</a></li>
+                <li><a href="#">유실물안내</a></li>
+                <li><a href="#">SR 고객센터</a></li>
+                <li><a href="#">기업성장응답센터</a></li>
+                <li><a href="#">SR 상생어벤저스</a></li>
+              </ul>
+            </li>
+            <li class="depth_1">
+              <a href="#">이용안내</a>
+              <ul class="depth_2">
+                <li><a href="#">종합이용안내</a></li>
+                <li><a href="#">승차권이용안내</a></li>
+                <li><a href="#">정차역이용안내</a></li>
+                <li><a href="#">운행구간</a></li>
+                <li><a href="#">부대사업안내</a></li>
+                <li><a href="#">지연배상신청</a></li>
+              </ul>
+            </li>
+            <li class="depth_1">
+              <a href="#">회원서비스</a>
+              <ul class="depth_2">
+                <li><a href="#">회원제도소개</a></li>
+                <li><a href="#">자가발권이용실적</a></li>
+                <li><a href="#">회원가입/탈퇴</a></li>
+                <li><a href="#">미등록고객서비스</a></li>
+                <li><a href="#">공공할인 이용신청 </a></li>
+              </ul>
+            </li>
+            <li class="depth_1">
+              <a href="#">여행상품</a>
+              <ul class="depth_2">
+                <li><a href="#">SRT BEST 여행상품</a></li>
+                <li><a href="#">지역별 여행상품</a></li>
+                <li><a href="#">당일 여행상품</a></li>
+                <li><a href="#">1박 2일 여행상품</a></li>
+                <li><a href="#">2박 3일 여행상품</a></li>
+                <li><a href="#">계절여행 특별관</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <!-- main area -->
+      <main>
+        <div class="main_inner container">
+          <div class="from_to">
+            <span>편도</span>
+            <span>왕복</span>
+          </div>
+          <nav class="ticketing_box">
+            <ul>
+              <li>
+                <span>출발</span>
+                <button class="station on">동대구역</button>
+                <ul class="station_box">
+                  <li><button class="list">수서역</button></li>
+                  <li><button class="list">서대구역</button></li>
+                  <li><button class="list">부산역</button></li>
                 </ul>
-            </nav>
-        </header>
-        <!-- main area -->
-        <main>
-            <div class="main_inner">
-                
-            </div>
-        </main>
+              </li>
+              <li>
+                <span>도착</span>
+                <button class="station on">수서역</button>
+                <ul class="station_box">
+                  <li><button class="list">동대구역</button></li>
+                  <li><button class="list">서대구역</button></li>
+                  <li><button class="list">부산역</button></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+          <form class="date" action="#">
+            <input class="month" type="date" id="currentDate" />
+            <input class="time" type="time" />
+          </form>
+          <form class="passanger" action="#">
+            <input type="number" min="0" max="9" />
+          </form>
+          <button type="submit" class="search">조회하기</button>
+        </div>
+      </main>
     </div>
   </body>
 </html>
