@@ -31,8 +31,7 @@
     <link rel="stylesheet" href="css/normalize.css" />
     <!-- style css -->
     <link rel="stylesheet" href="css/index.css" />
-    <!-- js -->
-    <script src="js/index.js"></script>
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -40,6 +39,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!-- js -->
+    <script src="js/index.js"></script>
   </head>
   <body>
     <div id="wrapper">
@@ -65,11 +66,11 @@
                 </a>
               </li>
               <li class="select_lang">
-                <button class="pl on">
+                <button class="pl on" onclick="toggleList()">
                   languages
                   <i class="fa-solid fa-chevron-down"></i>
                 </button>
-                <ul class="list_box">
+                <ul class="list_box" id="languageList">
                   <li><button class="list">english</button></li>
                   <li><button class="list">japanese</button></li>
                   <li><button class="list">chinese</button></li>
@@ -140,40 +141,109 @@
       <!-- main area -->
       <main>
         <div class="main_inner container">
-          <div class="from_to">
-            <span>편도</span>
-            <span>왕복</span>
-          </div>
-          <nav class="ticketing_box">
-            <ul>
-              <li>
-                <span>출발</span>
-                <button class="station on">동대구역</button>
-                <ul class="station_box">
-                  <li><button class="list">수서역</button></li>
-                  <li><button class="list">서대구역</button></li>
-                  <li><button class="list">부산역</button></li>
-                </ul>
-              </li>
-              <li>
-                <span>도착</span>
-                <button class="station on">수서역</button>
-                <ul class="station_box">
-                  <li><button class="list">동대구역</button></li>
-                  <li><button class="list">서대구역</button></li>
-                  <li><button class="list">부산역</button></li>
-                </ul>
-              </li>
-            </ul>
-          </nav>
-          <form class="date" action="#">
-            <input class="month" type="date" id="currentDate" />
-            <input class="time" type="time" />
+          <form class="ticketing_info">
+            <!-- start / station -->
+            <div class="from_to">
+              <span>편도</span>
+              <span>왕복</span>
+            </div>
+            <nav class="ticketing_box">
+              <ul>
+                <li>
+                  <span>출발</span>
+                  <button class="station on" onclick="toggleStationBox(this)">
+                    동대구역
+                  </button>
+                  <ul class="station_box">
+                    <li>
+                      <button class="list" onclick="selectStation('수서역')">
+                        수서역
+                      </button>
+                    </li>
+                    <li>
+                      <button class="list" onclick="selectStation('서대구역')">
+                        서대구역
+                      </button>
+                    </li>
+                    <li>
+                      <button class="list" onclick="selectStation('부산역')">
+                        부산역
+                      </button>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <span>도착</span>
+                  <button class="station on" onclick="toggleStationBox(this)">
+                    수서역
+                  </button>
+                  <ul class="station_box">
+                    <li>
+                      <button class="list" onclick="selectStation('동대구역')">
+                        동대구역
+                      </button>
+                    </li>
+                    <li>
+                      <button class="list" onclick="selectStation('서대구역')">
+                        서대구역
+                      </button>
+                    </li>
+                    <li>
+                      <button class="list" onclick="selectStation('부산역')">
+                        부산역
+                      </button>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+            <!-- ticket date / time info -->
+            <div class="date_time">
+              <input class="month" type="date" id="currentDate" />
+              <input class="time" type="time" />
+            </div>
+            <div class="passenger">
+              <div class="number-input">
+                <label for="number_adult">어른</label>
+                <button onclick="changeQuantity('number_adult', -1)">-</button>
+                <input
+                  class="quantity"
+                  id="number_adult"
+                  type="number"
+                  min="0"
+                  max="9"
+                  value="0"
+                  readonly
+                />
+                <button onclick="changeQuantity('number_adult', 1)">+</button>
+                <label for="number_child">어린이</label>
+                <button onclick="changeQuantity('number_child', -1)">-</button>
+                <input
+                  class="quantity"
+                  id="number_child"
+                  type="number"
+                  min="0"
+                  max="9"
+                  value="0"
+                  readonly
+                />
+                <button onclick="changeQuantity('number_child', 1)">+</button>
+                <label for="number_older">경로</label>
+                <button onclick="changeQuantity('number_old', -1)">-</button>
+                <input
+                  class="quantity"
+                  id="number_old"
+                  type="number"
+                  min="0"
+                  max="9"
+                  value="0"
+                  readonly
+                />
+                <button onclick="changeQuantity('number_old', 1)">+</button>
+              </div>
+            </div>
+            <button type="submit" class="search">조회하기</button>
           </form>
-          <form class="passanger" action="#">
-            <input type="number" min="0" max="9" />
-          </form>
-          <button type="submit" class="search">조회하기</button>
         </div>
       </main>
     </div>
