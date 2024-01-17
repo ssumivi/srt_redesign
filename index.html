@@ -39,6 +39,12 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- js -->
     <script src="js/index.js"></script>
   </head>
@@ -67,13 +73,25 @@
               </li>
               <li class="select_lang">
                 <button class="pl on" onclick="toggleList()">
-                  languages
+                  <span id="selectedLanguage">languages</span>
                   <i class="fa-solid fa-chevron-down"></i>
                 </button>
                 <ul class="list_box" id="languageList">
-                  <li><button class="list">english</button></li>
-                  <li><button class="list">japanese</button></li>
-                  <li><button class="list">chinese</button></li>
+                  <li>
+                    <button class="list" onclick="changeLanguage('english')">
+                      english
+                    </button>
+                  </li>
+                  <li>
+                    <button class="list" onclick="changeLanguage('japanese')">
+                      japanese
+                    </button>
+                  </li>
+                  <li>
+                    <button class="list" onclick="changeLanguage('chinese')">
+                      chinese
+                    </button>
+                  </li>
                 </ul>
               </li>
             </ul>
@@ -144,8 +162,8 @@
           <form class="ticketing_info">
             <!-- start / station -->
             <div class="from_to">
-              <span>편도</span>
-              <span>왕복</span>
+              <span onclick="toggleUnderline(this)">편도</span>
+              <span onclick="toggleUnderline(this)">왕복</span>
             </div>
             <nav class="ticketing_box">
               <ul>
@@ -197,10 +215,27 @@
                 </li>
               </ul>
             </nav>
+
             <!-- ticket date / time info -->
             <div class="date_time">
               <input class="month" type="date" id="currentDate" />
-              <input class="time" type="time" />
+              <div class="dropbox">
+                <label for="time">시간 선택</label>
+                <select name="time" id="time" class="time">
+                  <option value="000000">00시 이후</option>
+                  <option value="020000">02시 이후</option>
+                  <option value="040000">04시 이후</option>
+                  <option value="060000">06시 이후</option>
+                  <option value="080000">08시 이후</option>
+                  <option value="100000">10시 이후</option>
+                  <option value="120000">12시 이후</option>
+                  <option value="140000">14시 이후</option>
+                  <option value="160000">16시 이후</option>
+                  <option value="180000">18시 이후</option>
+                  <option value="200000">20시 이후</option>
+                  <option value="220000">22시 이후</option>
+                </select>
+              </div>
             </div>
             <div class="passenger">
               <div class="number-input">
@@ -242,10 +277,91 @@
                 <button onclick="changeQuantity('number_old', 1)">+</button>
               </div>
             </div>
-            <button type="submit" class="search">조회하기</button>
+            <p>
+              <button type="submit" class="load_timeTable">조회하기</button>
+            </p>
           </form>
         </div>
       </main>
+      <!-- quick menu -->
+      <div class="quick_menu container">
+        <ul class="quick_menu_list">
+          <li>
+            <a href="#">
+              <img src="images/ico-e_q1_on.png" alt="">
+              <span>예매내역 · 환불</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="images/ico-e_q2.png" alt="">
+              <span>열차운임 · 시간표</span> 
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="images/ico-e_q6.png" alt="">
+              <span>AI 챗봇</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="images/ico-e_q4.png" alt="">
+              <span>유실물센터</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="images/ico-e_q5.png" alt="">
+              <span>안전신문고</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- visual area -->
+      <section>
+        <div class="section_left">
+          <div class="swiper img_slide">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <a href="#">
+                  <img src="images/seat_guide.png" alt="">
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="#">
+                  <img src="images/ticket.jpg" alt="">
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="#">
+                  <img src="images/new_year.jpg" alt="">
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="#">
+                  <img src="images/rentacar.jpg" alt="">
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="#">
+                  <img src="images/reserv_naver.png" alt="">
+                </a>
+              </div>
+              <div class="swiper-slide">Slide 6</div>
+              <div class="swiper-slide">Slide 7</div>
+              <div class="swiper-slide">Slide 8</div>
+              <div class="swiper-slide">Slide 9</div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+        <div class="section_right">
+
+        </div>
+      </section>
     </div>
   </body>
 </html>

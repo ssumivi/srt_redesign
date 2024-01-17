@@ -121,6 +121,9 @@ li:hover .fa-globe::after {
   appearance: none;
   text-align: left;
 }
+.pl span {
+  padding-right: 10px;
+}
 .list_box {
   position: absolute;
   top: 35px;
@@ -189,15 +192,28 @@ li:hover .fa-globe::after {
   font-size: 32px;
   padding: 40px 100px;
 }
-.from_to::after {
+.from_to span {
+  position: relative;
+  margin-right: 20px;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+.from_to span::after {
   content: "";
   display: block;
   position: absolute;
-  top: 72%;
-  left: 24%;
+  bottom: -8px;
+  left: 0;
   width: 65px;
   height: 3px;
   background-color: #fff;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+}
+.from_to span.active::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 .ticketing_box {
   position: relative;
@@ -246,7 +262,6 @@ li:hover .fa-globe::after {
   box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
   margin-top: 9px;
-  opacity: 0;
 }
 .station_box .list {
   border: none;
@@ -262,18 +277,40 @@ li:hover .fa-globe::after {
   color: #fff;
   text-align: center;
 }
+/* js */
+.station_box {
+  opacity: 0;
+  position: absolute;
+}
+/* js end */
 .ticketing_info .date_time {
   display: flex;
   justify-content: center;
   margin-top: 20px;
+  font-weight: 500;
+  font-size: 18px;
 }
 .month {
   border-radius: 5px 0 0 5px;
   margin-right: 1px;
 }
-.time {
+.dropbox {
   border-radius: 0 5px 5px 0;
+  width: 450px;
+  height: 80px;
+  border: 0;
 }
+.dropbox .time {
+  border-radius: 0 5px 5px 0;
+  width: 450px;
+  height: 80px;
+  border: 0;
+  text-align: center;
+}
+.dropbox label {
+  display: none;
+}
+
 .ticketing_info input {
   width: 450px;
   height: 80px;
@@ -285,18 +322,17 @@ li:hover .fa-globe::after {
 .ticketing_info .passenger {
   display: flex;
   justify-content: center;
-  gap: 20px;
   margin-top: 20px;
 }
 .number-input {
   display: flex;
   align-items: center;
   justify-content: center;
-
   text-align: center;
-  width: 200px;
-  height: 100px;
-
+  width: 900px;
+  height: 80px;
+  border-radius: 5px;
+  background-color: #fff;
 }
 .number-input input {
   height: 30px;
@@ -304,13 +340,18 @@ li:hover .fa-globe::after {
   font-size: 14px;
   width: 3em;
 }
+.number-input label {
+  padding: 0 30px;
+  font-weight: 500;
+  font-size: 17px;
+}
 .number-input button {
   background-color: #ededed;
   border: none;
   color: #404040;
   font-size: 1rem;
   padding: 0.5rem;
-  width: 3rem;
+  width: 2rem;
   height: 30px;
   text-align: center;
   text-decoration: none;
@@ -324,7 +365,47 @@ li:hover .fa-globe::after {
 .number-input button:nth-of-type(even) {
   border-radius: 0 5px 5px 0;
 }
+
 .quantity {
   width: 3rem;
   text-align: center;
+}
+form p {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+.load_timeTable {
+  width: 360px;
+  height: 50px;
+  flex-shrink: 0;
+  font-size: 18px;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #5a2149;
+}
+/* quick menu */
+.quick_menu {
+  width: 980px;
+  display: flex;
+  justify-content: center;
+  margin-top: 45px;
+  border: 1px solid #c4c4c4;
+  border-radius: 5px;
+}
+.quick_menu_list {
+  display: flex;
+  justify-content: center;
+  gap: 110px;
+  padding: 40px 0 45px 0;
+}
+.quick_menu_list li a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.quick_menu_list span {
+ padding-top: 20px;
 }
