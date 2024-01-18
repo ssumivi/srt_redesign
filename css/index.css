@@ -1,6 +1,13 @@
 @charset "utf-8";
 @import url("https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;500;700;900&display=swap");
 /* font-family: 'Gothic A1', sans-serif; */
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
 * {
   margin: 0;
   padding: 0;
@@ -10,7 +17,8 @@ button {
   background-color: transparent;
 }
 body {
-  font-family: "Gothic A1", sans-serif;
+  /* font-family: "Gothic A1", sans-serif; */
+  font-family: "Pretendard-Regular";
   color: #404040;
 }
 #wrapper {
@@ -21,7 +29,7 @@ body {
   margin: 15px auto;
 }
 .container {
-  width: 1300px;
+  max-width: 1440px;
   margin: 0 auto;
 }
 /* header area */
@@ -67,7 +75,7 @@ header {
   content: "";
   display: block;
   position: absolute;
-  top: -1px;
+  top: 0px;
   left: -0.5px;
   width: 51px;
   height: 18px;
@@ -142,7 +150,7 @@ li:hover .fa-globe::after {
   border: none;
   background-color: #ffffff;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 16px;
   padding: 7px 10px;
   margin: 5px 7px;
@@ -166,15 +174,24 @@ li:hover .fa-globe::after {
   padding: 20px 120px;
   border-radius: 5px;
   border: 1px solid var(--d-8-d-8-d-8, #d8d8d8);
+  word-break: keep-all;
+  min-width: 1000px;
+  /* overflow: hidden; */
 }
+
 .depth_1 > a {
-  font-size: 22px;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #404040;
 }
 .depth_2 {
+  position: absolute;
   margin-top: 30px;
+  background-color: #fff;
   display: none;
+}
+.depth_1:hover .depth_2 {
+  display: block;
 }
 /* main area */
 .main_inner {
@@ -205,7 +222,7 @@ li:hover .fa-globe::after {
   position: absolute;
   bottom: -8px;
   left: 0;
-  width: 65px;
+  width: 57px;
   height: 3px;
   background-color: #fff;
   transform: scaleX(0);
@@ -293,6 +310,12 @@ li:hover .fa-globe::after {
 .month {
   border-radius: 5px 0 0 5px;
   margin-right: 1px;
+  z-index: 9999;
+  padding: 0 20px;
+}
+/* 추가된 CSS 스타일 */
+.date_time input[type="date"] {
+  transform-origin: top; /* 기준점을 위로 설정 */
 }
 .dropbox {
   border-radius: 0 5px 5px 0;
@@ -350,7 +373,6 @@ li:hover .fa-globe::after {
   border: none;
   color: #404040;
   font-size: 1rem;
-  padding: 0.5rem;
   width: 2rem;
   height: 30px;
   text-align: center;
@@ -385,6 +407,7 @@ form p {
   border-radius: 5px;
   background-color: #fff;
   color: #5a2149;
+  cursor: pointer;
 }
 /* quick menu */
 .quick_menu {
@@ -407,5 +430,218 @@ form p {
   align-items: center;
 }
 .quick_menu_list span {
- padding-top: 20px;
+  padding-top: 20px;
+}
+/* notice area */
+section .section_top,
+.section_bt {
+  width: 980px;
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  margin-top: 45px;
+  padding: 20px 10px;
+  border: 1px solid #c4c4c4;
+  border-radius: 5px;
+}
+/* section top */
+/* section left */
+/* swiper */
+.section_left {
+  width: 50%;
+}
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* section right */
+.section_right {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.section_right h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 48px;
+}
+.section_right h3 b {
+  color: #5a2149;
+}
+.section_right::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 100%;
+  height: 2.83px;
+  background-color: #5f6062;
+}
+.section_right ul {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+}
+.section_right ul li {
+  display: flex;
+  justify-content: space-between;
+}
+.section_right ul li a {
+  /* 줄바꿈 방지 */
+  white-space: nowrap;
+  /* 말줄임 표시 (...) 추가 */
+  text-overflow: ellipsis;
+  /* 넘치는 거 방지 */
+  overflow: hidden;
+  /* 상대너비 설정 */
+  max-width: 250px;
+}
+.need_more {
+  text-align: center;
+  padding-top: 48px;
+  color: #5f6062;
+}
+.need_more a:hover {
+  text-decoration: underline;
+  text-decoration-color: #5f6062;
+}
+/* section bt */
+.banner {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+}
+.banner a {
+  width: 47%;
+}
+.banner a img {
+  width: 100%;
+}
+/* best travel pkg */
+.best_travel {
+  width: 980px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 50px;
+  margin-top: 45px;
+  padding: 20px 10px;
+  border: 1px solid #c4c4c4;
+  border-radius: 5px;
+}
+.best_travel h3 {
+  font-size: 1.87rem;
+  font-weight: 700;
+  color: #5a2149;
+  width: 100%;
+  margin-left: 30px;
+}
+/* swiper */
+.best_travel_imgslide {
+  width: 100%;
+  padding: 10px;
+}
+.best_travel_imgslide .swiper {
+  width: 100%;
+  height: 400px;
+}
+
+.swiper-slide {
+  position: relative;
+  text-align: center;
+  font-size: 1.45rem;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #e2e2e2;
+  border-radius: 5px;
+}
+.best_travel_imgslide .swiper-slide:not(.plus_travel)::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.swiper-slide a img {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-slide a p {
+  color: #fff;
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  z-index: 1;
+  width: 150px;
+  word-break: keep-all;
+  text-align: left;
+  line-height: 1.32;
+}
+.swiper-slide a span {
+  color: #fff;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1;
+}
+.swiper-slide.plus_travel p {
+  position: absolute;
+  top: 30%;
+  left: 25%;
+  line-height: 2;
+  text-align: center;
+  color: #000;
+  font-weight: 700;
+}
+.swiper-slide.plus_travel p span {
+  position: absolute;
+  display: block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  bottom: -57%;
+  left: 40%;
+  text-align: center;
+  background-color: #5a2149;
+  border-radius: 50%;
+}
+/* swiper btn */
+.swiper-button-prev:after {
+  color: #ffffff;
+  font-size: 1.48rem !important;
+  font-weight: 700;
+}
+.swiper-button-next:after {
+  color: #ffffff;
+  font-size: 1.48rem !important;
+  font-weight: 700;
 }

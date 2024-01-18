@@ -1,7 +1,7 @@
-//language box setting
 document.addEventListener("DOMContentLoaded", function () {
   var list = document.getElementById("languageList");
   var listItems = list.getElementsByTagName("li");
+  var delay = 200;
 
   function toggleList() {
     list.style.display = list.style.display === "none" ? "block" : "none";
@@ -10,126 +10,110 @@ document.addEventListener("DOMContentLoaded", function () {
   function closeListWithDelay() {
     setTimeout(function () {
       list.style.display = "none";
-    }, 3000); // 500 밀리초 (0.5초) 딜레이 설정, 원하는 시간으로 조절 가능
+    }, 3000);
   }
 
   function closeList() {
     list.style.display = "none";
   }
 
+  function toggleLanguageList() {
+    var languageList = document.getElementById("languageList");
+    languageList.classList.toggle("visible");
+  }
+
+  function changeLanguage(language) {
+    var selectedLanguage = document.getElementById("selectedLanguage");
+    selectedLanguage.innerText = language;
+  }
+
+  function toggleUnderline(span) {
+    var spans = document.querySelectorAll(".from_to span");
+    spans.forEach(function (element) {
+      element.classList.remove("active");
+    });
+
+    span.classList.add("active");
+  }
+
+  function toggleStationBox(button) {
+    var stationBox = button.nextElementSibling;
+    var currentOpacity = parseFloat(
+      window.getComputedStyle(stationBox).getPropertyValue("opacity")
+    );
+
+    stationBox.style.opacity = currentOpacity === 0 ? 1 : 0;
+  }
+
+  function selectStation(station) {
+    console.log("Selected station: " + station);
+
+    setTimeout(function () {
+      var stationBoxes = document.querySelectorAll(".station_box");
+      stationBoxes.forEach(function (box) {
+        box.style.opacity = 0;
+      });
+    }, delay);
+  }
+
+  function getCurrentDate() {
+    var currentDate = new Date();
+    var year = currentDate.getFullYear();
+    var month = (currentDate.getMonth() + 1).toString().padStart(2, "0");
+    var day = currentDate.getDate().toString().padStart(2, "0");
+    return `${year}-${month}-${day}`;
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var currentDateInput = document.getElementById("currentDate");
+    currentDateInput.value = getCurrentDate();
+  });
+
+  function changeQuantity(number, value) {
+    var inputElement = document.getElementById(number);
+    var currentValue = parseInt(inputElement.value, 10);
+    var newValue = currentValue + value;
+
+    if (newValue >= 0 && newValue <= 9) {
+      inputElement.value = newValue;
+    }
+  }
+
+  // Swiper
+  var swiper = new Swiper(".noti_slide", {
+    cssMode: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+    },
+    mousewheel: true,
+    keyboard: true,
+  });
+
   document.querySelector(".pl").addEventListener("click", toggleList);
 
   for (var i = 0; i < listItems.length; i++) {
     listItems[i].addEventListener("click", closeList);
   }
-});
-function toggleList() {
-  var languageList = document.getElementById("languageList");
-  languageList.classList.toggle("visible");
-}
-
-function changeLanguage(language) {
-  var selectedLanguage = document.getElementById("selectedLanguage");
-  selectedLanguage.innerText = language;
-}
-
-//from_to
-function toggleUnderline(span) {
-  // 모든 span 요소에서 active 클래스 제거
-  var spans = document.querySelectorAll(".from_to span");
-  spans.forEach(function (element) {
-    element.classList.remove("active");
+  //travel swiper
+  var swiper = new Swiper(".travel_imgslide", {
+    slidesPerView: 3,
+    // loop: true,
+    // centeredSlides: true,
+    spaceBetween: 20,
+    grabCursor: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
   });
-
-  // 클릭한 span에 active 클래스 추가
-  span.classList.add("active");
-}
-
-//station check
-var delay = 200; // 딜레이 시간 (밀리초)
-
-function toggleStationBox(button) {
-  var stationBox = button.nextElementSibling;
-  var currentOpacity = parseFloat(
-    window.getComputedStyle(stationBox).getPropertyValue("opacity")
-  );
-
-  if (currentOpacity === 0) {
-    stationBox.style.opacity = 1;
-  } else {
-    stationBox.style.opacity = 0;
-  }
-}
-
-function selectStation(station) {
-  // 여기에 선택된 역에 대한 작업을 추가할 수 있습니다.
-  console.log("Selected station: " + station);
-
-  // 딜레이 후 .station_box 닫기
-  setTimeout(function () {
-    var stationBoxes = document.querySelectorAll(".station_box");
-    for (var i = 0; i < stationBoxes.length; i++) {
-      stationBoxes[i].style.opacity = 0;
-    }
-  }, delay);
-}
-
-//month
-// 현재 날짜를 가져오기 위한 함수
-function getCurrentDate() {
-  var currentDate = new Date();
-  var year = currentDate.getFullYear();
-  var month = (currentDate.getMonth() + 1).toString().padStart(2, "0"); // 월은 0부터 시작하므로 +1, 2자리로 패딩
-  var day = currentDate.getDate().toString().padStart(2, "0"); // 일자도 2자리로 패딩
-  return `${year}-${month}-${day}`;
-}
-
-// 페이지 로드 시 현재 날짜를 input에 설정
-document.addEventListener("DOMContentLoaded", function () {
-  var currentDateInput = document.getElementById("currentDate");
-  currentDateInput.value = getCurrentDate();
 });
 
-//인원 체크
-function changeQuantity(number_adult, value) {
-  var inputElement = document.getElementById(number_adult);
-  var currentValue = parseInt(inputElement.value, 10);
-  var newValue = currentValue + value;
 
-  if (newValue >= 0 && newValue <= 9) {
-    inputElement.value = newValue;
-  }
-}
-function changeQuantity(number_child, value) {
-  var inputElement = document.getElementById(number_child);
-  var currentValue = parseInt(inputElement.value, 10);
-  var newValue = currentValue + value;
-
-  if (newValue >= 0 && newValue <= 9) {
-    inputElement.value = newValue;
-  }
-}
-function changeQuantity(number_old, value) {
-  var inputElement = document.getElementById(number_old);
-  var currentValue = parseInt(inputElement.value, 10);
-  var newValue = currentValue + value;
-
-  if (newValue >= 0 && newValue <= 9) {
-    inputElement.value = newValue;
-  }
-}
-
-//slide
-
-var swiper = new Swiper(".img_slide", {
-  cssMode: true,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  pagination: {
-    el: ".swiper-pagination",
-  },
-  mousewheel: true,
-  keyboard: true,
-});

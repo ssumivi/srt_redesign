@@ -44,10 +44,14 @@
   href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
 />
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- js -->
+    <script src="js/html5shiv.js"></script>
+    <!-- 새로 고침 잘 안되니까 잠깐 주석처리 -->
+    <!-- <script src="js/prefixfree.min.js"></script> -->
+    <script src="js/respond.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/index.js"></script>
-  </head>
+  </head> 
   <body>
     <div id="wrapper">
       <!-- header area -->
@@ -318,10 +322,11 @@
           </li>
         </ul>
       </div>
-      <!-- visual area -->
+      <!-- notice area -->
       <section>
+        <div class="section_top container">
         <div class="section_left">
-          <div class="swiper img_slide">
+          <div class="swiper noti_slide">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <a href="#">
@@ -348,10 +353,6 @@
                   <img src="images/reserv_naver.png" alt="">
                 </a>
               </div>
-              <div class="swiper-slide">Slide 6</div>
-              <div class="swiper-slide">Slide 7</div>
-              <div class="swiper-slide">Slide 8</div>
-              <div class="swiper-slide">Slide 9</div>
             </div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
@@ -359,9 +360,127 @@
           </div>
         </div>
         <div class="section_right">
-
+          <h3> <b>SRT</b> 공지사항</h3>
+          <ul>
+            <li><a href="#">
+              <span>2023년 4분기 SR 회원 등급조회 및 혜택 안내</span></a>
+              <sub class="noti_date">2024-01-05</sub></li>
+            <li><a href="#">
+              <span>2024년 설 명절 SRT 승차권 예매 안내</span></a>
+              <sub class="noti_date">2024-01-05</sub>
+            </li>
+            <li><a href="#">
+              <span>수도권 철도 정기승차권 교통비 지원</span></a>
+              <sub class="noti_date">2024-01-02</sub>
+            </li>
+            <li><a href="#">
+              <span>동탄→수서 출근열차(690열차) 운휴 알림(신정)</span></a>
+              <sub class="noti_date">2023-12-28</sub>
+            </li>
+          </ul>
+          <span class="need_more"><a href="#">+더보기</a></span>
         </div>
-      </section>
+        </div>
+        <div class="section_bt container">
+          <div class="banner">
+            <a href="#">
+            <img src="images/ticket_guide.png" alt="티켓이용안내">
+            </a>
+            <a href="#">
+            <img src="images/newyear_ticketing.png" alt="경로, 장애인, 상이유공자 사전접수 바로가기">
+            </a>
+          </div>
+        </div>
+    </section>
+    <!-- best travel pkg -->
+    <div class="best_travel container">
+      <h3>베스트 여행상품</h3>
+      <div class="best_travel_imgslide">
+        <div class="swiper travel_imgslide">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <a href="#">
+                <img src="images/busan.jpg" alt="부산">
+                <p>해운대 로맨스
+                  <br>구석구석 부산시티투어
+                  <br>[보군여행사]
+                </p>
+                <span>부산</span>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#">
+                <img src="images/cablecar.jpg" alt="케이블카">
+                <p>미륵산 케이블카 
+                  & 남해 보물섬
+                  [여행공방]
+                </p>
+                <span>통영</span>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#">
+                <img src="images/flower.jpg" alt="꽃밭">
+                <p>철쭉3대명산 진분홍빛 철쭉 군락지
+                  <br>& 합천 황매산
+                  <br>[여행공방]
+                </p>
+                <span>합천</span>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#">
+                <img src="images/slow_city.jpg" alt="청산도">
+                <p>슬로우시티 청산도~보길도~
+                  <br>땅끝마을&두륜산(1박2일)
+                  <br>[보군여행사]
+                </p>
+                <span>청산도~두륜산</span>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#">
+                <img src="images/sado.jpg" alt="사도">
+                <p>사도 탐방 홍도/흑산도/비금/도초도
+                  <br>3일
+                  <br>[보군여행사]
+                </p>
+                <span>사도탐방</span>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#">
+                <img src="images/island.jpg" alt="흑산도">
+                <p>그 섬에 가고 싶다!
+                  <br>홍도&plus;흑산도_3일
+                  <br>[보군여행사]
+                </p>
+                <span>홍도&plus;흑산도</span>
+              </a>
+            </div>
+            <div class="swiper-slide plus_travel">
+              <a href="#">
+                <p>여행상품
+                  <br>더보기
+                  <br><span>+</span>
+                </p>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+
+    </div>
+    <!-- footer -->
+    <footer>
+      <!-- footer top -->
+      <div class="ft_top"></div>
+      <!-- footer bt -->
+      <div class="ft_bottom"></div>
+    </footer>
     </div>
   </body>
 </html>
