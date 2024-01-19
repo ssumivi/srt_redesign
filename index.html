@@ -63,6 +63,32 @@
             </a>
           </div>
           <div class="topmenu">
+            <ul class="fullsc_log">
+              <li><a href="#">로그인</a></li>
+              <li><a href="#">회원가입</a></li>
+              <li><a href="#">사이트맵</a></li>
+              <li class="select_lang">
+                <button class="pl on" onclick="toggleList()">
+                  <span id="selectedLanguage">languages</span>
+                  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <ul class="list_box" id="languageList">
+                  <li>
+                    <button class="list" onclick="changeLanguage('english')">
+                      english
+                    </button>
+                  </li>
+                  <li>
+                    <button class="list" onclick="changeLanguage('japanese')">
+                      japanese
+                    </button>
+                  </li>
+                  <li>
+                    <button class="list" onclick="changeLanguage('chinese')">
+                      chinese
+                    </button>
+                  </li>
+            </ul>
             <ul class="icon">
               <li>
                 <a href="#">
@@ -161,8 +187,8 @@
         </nav>
       </header>
       <!-- main area -->
-      <main>
-        <div class="main_inner container">
+      <main class="container">
+        <div class="main_inner">
           <form class="ticketing_info">
             <!-- start / station -->
             <div class="from_to">
@@ -452,7 +478,7 @@
               <a href="#">
                 <img src="images/island.jpg" alt="흑산도">
                 <p>그 섬에 가고 싶다!
-                  <br>홍도&plus;흑산도_3일
+                  <br>홍도&plus;흑산도 3일
                   <br>[보군여행사]
                 </p>
                 <span>홍도&plus;흑산도</span>
@@ -477,9 +503,45 @@
     <!-- footer -->
     <footer>
       <!-- footer top -->
-      <div class="ft_top"></div>
+      <div class="ft_top">
+        <div class="ft_top_up container">
+        <ul class="ft_link">
+          <li><a href="#"><b>개인정보처리방침</b></a></li>
+          <li><a href="#">고객서비스헌장</a></li>
+          <li><a href="#">여객운송약관/부속약관</a></li>
+          <li><a href="#"><b>국토교통부사이트바로가기</b></a></li>
+        </ul>
+      </div>
+      <div class="ft_top_down container">
+        <img src="images/logo_f_etk.png" alt="sr로고">
+        <p class="addr">
+          <span>대표자 : 이종국</span>
+          <span>상호: 주식회사 에스알 </span>
+          <span>사업자등록: 305-86-31590</span>
+          <span>통신판매업신고: 2016-서울강남-03705호(우: 06367)</span>
+          <span>서울특별시 강남구 광평로 56길 12 희림빌딩</span>
+          <span>TEL 1800-1472</span>
+          <span>FAX) 6484-4093</span>
+          <span class="Copyright">Copyright 2018. SR Inc. All rights reserved.</span>
+        </p>
+        
+      </div>
+      </div>
       <!-- footer bt -->
-      <div class="ft_bottom"></div>
+      <div class="ft_bottom">
+        <ul class="ft_bottom_ul container">
+          <li><img src="images/footer/ic_f_brand.png" alt=""></li>
+          <li><img src="images/footer/ic_f_highest.png" alt=""></li>
+          <li><img src="images/footer/ic_f_wa.png" alt=""></li>
+          <li><img src="images/footer/ic_sys_purvey.png" alt=""></li>
+          <li><img src="images/footer/ismsp_footer.png" alt=""></li>
+          <li><img src="images/footer/ccm.png" alt=""></li>
+          <li><img src="images/footer/eprivacy.png" alt=""></li>
+          <li><img src="images/footer/ic_ISO-27701.png" alt=""></li>
+          <li><img src="images/footer/iso27001.png" alt=""></li>
+          <li><img src="images/footer/ic_AAA.png" alt=""></li>
+        </ul>
+      </div>
     </footer>
     </div>
   </body>

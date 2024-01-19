@@ -91,6 +91,12 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     mousewheel: true,
     keyboard: true,
+    speed: 8000,
+    loop: true,
+    autoplay: {
+      delay: 7000,
+      disableOnInteraction: false,
+    },
   });
 
   document.querySelector(".pl").addEventListener("click", toggleList);
@@ -115,5 +121,3 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 });
-
-
