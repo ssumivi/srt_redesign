@@ -43,7 +43,8 @@
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
 />
-
+    <!-- mediaquery -->
+    <link rel="stylesheet" href="css/mediaquery.css">
     <!-- js -->
     <script src="js/html5shiv.js"></script>
     <!-- 새로 고침 잘 안되니까 잠깐 주석처리 -->
@@ -63,33 +64,7 @@
             </a>
           </div>
           <div class="topmenu">
-            <ul class="fullsc_log">
-              <li><a href="#">로그인</a></li>
-              <li><a href="#">회원가입</a></li>
-              <li><a href="#">사이트맵</a></li>
-              <li class="select_lang">
-                <button class="pl on" onclick="toggleList()">
-                  <span id="selectedLanguage">languages</span>
-                  <i class="fa-solid fa-chevron-down"></i>
-                </button>
-                <ul class="list_box" id="languageList">
-                  <li>
-                    <button class="list" onclick="changeLanguage('english')">
-                      english
-                    </button>
-                  </li>
-                  <li>
-                    <button class="list" onclick="changeLanguage('japanese')">
-                      japanese
-                    </button>
-                  </li>
-                  <li>
-                    <button class="list" onclick="changeLanguage('chinese')">
-                      chinese
-                    </button>
-                  </li>
-            </ul>
-            <ul class="icon">
+            <ul class="tablet_log">
               <li>
                 <a href="#">
                   <span class="log_in">로그인</span>
@@ -125,9 +100,36 @@
                 </ul>
               </li>
             </ul>
+            <ul class="fullsc_log">
+              <li><a href="#">로그인</a></li>
+              <li><a href="#">회원가입</a></li>
+              <li><a href="#">사이트맵</a></li>
+              <li class="select_lang">
+                <button class="pl on" onclick="toggleList()">
+                  <span id="selectedLanguage">languages</span>
+                  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <ul class="list_box" id="languageList">
+                  <li>
+                    <button class="list" onclick="changeLanguage('english')">
+                      english
+                    </button>
+                  </li>
+                  <li>
+                    <button class="list" onclick="changeLanguage('japanese')">
+                      japanese
+                    </button>
+                  </li>
+                  <li>
+                    <button class="list" onclick="changeLanguage('chinese')">
+                      chinese
+                    </button>
+                  </li>
+            </ul>
+            
           </div>
         </div>
-        <nav id="menu" class="container">
+        <nav id="top_menu" class="container">
           <ul class="menu">
             <li class="depth_1">
               <a href="#">승차권</a>
@@ -387,36 +389,21 @@
         </div>
         <div class="section_right">
           <h3> <b>SRT</b> 공지사항</h3>
-          <ul class="quick_menu_list">
-            <li>
-              <a href="#">
-                <img src="images/ico-e_q1_on.png" alt="">
-                <span>예매내역 · 환불</span>
-              </a>
+          <ul>
+            <li><a href="#">
+              <span>2023년 4분기 SR 회원 등급조회 및 혜택 안내</span></a>
+              <span class="noti_date">2024-01-05</span></li>
+            <li><a href="#">
+              <span>2024년 설 명절 SRT 승차권 예매 안내</span></a>
+              <span class="noti_date">2024-01-05</span>
             </li>
-            <li>
-              <a href="#">
-                <img src="images/ico-e_q2.png" alt="">
-                <span>열차운임 · 시간표</span> 
-              </a>
+            <li><a href="#">
+              <span>수도권 철도 정기승차권 교통비 지원</span></a>
+              <span class="noti_date">2024-01-02</span>
             </li>
-            <li>
-              <a href="#">
-                <img src="images/ico-e_q6.png" alt="">
-                <span>AI 챗봇</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="images/ico-e_q4.png" alt="">
-                <span>유실물센터</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="images/ico-e_q5.png" alt="">
-                <span>안전신문고</span>
-              </a>
+            <li><a href="#">
+              <span>동탄→수서 출근열차(690열차) 운휴 알림(신정)</span></a>
+              <span class="noti_date">2023-12-28</span>
             </li>
           </ul>
           <span class="need_more"><a href="#">+더보기</a></span>
@@ -441,6 +428,7 @@
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <a href="#">
+                
                 <img src="images/busan.jpg" alt="부산">
                 <p>해운대 로맨스
                   <br>구석구석 부산시티투어

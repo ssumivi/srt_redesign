@@ -1,0 +1,152 @@
+@charset "utf-8";
+@media all and (max-width:1330px){
+    html{
+        font-size: 14px;
+    }
+    #wrapper{
+        width: 100%;
+    }
+    /* header */
+    header{
+        width: 100%;
+    }
+    .header_inner{
+        min-width: 1100px;
+        padding: 20px 0;
+    }
+    .fullsc_log::after{
+        top: 1.2rem;
+        right: 11.7rem;
+    }
+    #top_menu{
+        min-width: 1100px;
+        padding: 0;
+    }
+    .menu{
+       justify-content: center;
+       padding: 0;
+       gap: 100px;
+       width: 980px;
+       margin: 40px auto;
+    }
+    .depth_1::after{
+        height: 320px;
+    }
+    /* main */
+    .main_inner{
+        width: 860px;
+        margin: 50px auto;
+    }
+    .from_to span:first-child{
+        top: 0;
+        left: 102px;
+    }
+    .from_to span:nth-child(2){
+        right: 107px;
+    }
+    .station{
+        width: 400px;
+    }
+    .station_box{
+        width: 400px;
+    }
+    .station_box .list:focus{
+        width: 400px;
+    }
+    .date_time .month{
+        padding: 20px;
+        width: 400px;
+    }
+    .dropbox{
+        width: 400px;
+    }
+    .dropbox .time{
+        width: 400px;
+    }
+    .number-input{
+        width: 800px;
+        
+    }
+    .number-input input{
+        text-align: left;
+    }
+    /* quick menu */
+    .quick_menu{
+        width: 860px;
+    }
+    .quick_menu_list{
+        gap: 80px;
+    }
+    /* notice */
+    section .section_top, .section_bt{
+        width: 860px;
+    }
+    /* best travel pkg */
+    .best_travel{
+        width: 860px;
+    }
+    /* footer */
+    footer{
+        min-width: 1100px;
+    }
+}
+@media all and (max-width:1110px){
+    .header_inner{
+        padding: 20px 0;
+    }
+    .fullsc_log{
+        display: none;
+    }
+    .tablet_log{
+        display: block;
+        display: flex;
+        gap: 72px;
+        font-size: 1.3rem;
+        align-items: center;
+        position: relative;
+    }
+    .log_in{
+        position: absolute;
+        display: block;
+        top: -12px;
+        left: -20px;
+        font-size: 1rem;
+        width: 55px;
+        height: 20px;
+        border-radius: 15px;
+        background-color:#5a2149;
+        color: #fff;
+        text-align: center;
+        line-height: 20px;
+        transition: all 3s ease-in-out;
+        animation: pop 1s infinite;
+    }
+    @keyframes pop{
+        from{
+            transform: translateY(0);
+        }
+        to{
+            transform: translateY(1px);
+        }
+    }
+    .fa-globe::after {
+        content: "사이트맵";
+        display: block;
+        position: absolute;
+        top: -12px;
+        left: 62px;
+        width: 70px;
+        height: 20px;
+        text-align: center;
+        line-height: 21px;
+        background-color: #404040;
+        border-radius: 15px;
+        color: #fff;
+        font-size: .9rem;
+        opacity: 0;
+        transition: all 0.3s;
+      }
+      li:hover .fa-globe::after {
+        opacity: 1;
+      }
+}
